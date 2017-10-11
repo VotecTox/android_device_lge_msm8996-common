@@ -344,7 +344,7 @@
     </CamcorderProfiles>
      
     <!-- Front Camera -->
-    <CamcorderProfiles cameraId="1">
+    <CamcorderProfiles cameraId="2">
 
         <EncoderProfile quality="low" fileFormat="3gp" duration="60">
             <Video codec="h264"
@@ -502,7 +502,7 @@
 
     </CamcorderProfiles>
     <!-- Wide angle Camera -->
-    <CamcorderProfiles cameraId="2">
+    <CamcorderProfiles cameraId="1">
 
          <EncoderProfile quality="low" fileFormat="3gp" duration="60">
             <Video codec="h264"
