@@ -117,7 +117,7 @@
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="48000"
-                   channels="1" />
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="qcif" fileFormat="3gp" duration="60">
@@ -153,7 +153,7 @@
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="48000"
-                   channels="1" />
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="480p" fileFormat="mp4" duration="30">
@@ -165,7 +165,7 @@
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="48000"
-                   channels="1" />
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="720p" fileFormat="mp4" duration="30">
@@ -177,7 +177,7 @@
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="48000"
-                   channels="1" />
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="1080p" fileFormat="mp4" duration="30">
@@ -189,7 +189,7 @@
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="48000"
-                   channels="1" />
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="2160p" fileFormat="mp4" duration="30">
@@ -201,7 +201,7 @@
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="48000"
-                   channels="1" />
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
@@ -307,7 +307,7 @@
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="48000"
-                   channels="1" />
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="highspeed720p" fileFormat="mp4" duration="30">
@@ -320,7 +320,7 @@
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="48000"
-                   channels="1" />
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="highspeed1080p" fileFormat="mp4" duration="30">
@@ -333,7 +333,7 @@
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="48000"
-                   channels="1" />
+                   channels="2" />
         </EncoderProfile>
 
         <ImageEncoding quality="95" />
@@ -368,7 +368,7 @@
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="48000"
-                   channels="1" />
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="qcif" fileFormat="3gp" duration="60">
@@ -404,7 +404,7 @@
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="48000"
-                   channels="1" />
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="480p" fileFormat="mp4" duration="30">
@@ -416,7 +416,7 @@
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="48000"
-                   channels="1" />
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="720p" fileFormat="mp4" duration="30">
@@ -428,7 +428,7 @@
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="48000"
-                   channels="1" />
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="1080p" fileFormat="mp4" duration="30">
@@ -440,7 +440,7 @@
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="48000"
-                   channels="1" />
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
@@ -526,7 +526,7 @@
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="48000"
-                   channels="1" />
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="qcif" fileFormat="3gp" duration="60">
@@ -562,7 +562,7 @@
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="48000"
-                   channels="1" />
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="480p" fileFormat="mp4" duration="30">
@@ -574,7 +574,7 @@
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="48000"
-                   channels="1" />
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="720p" fileFormat="mp4" duration="30">
@@ -586,7 +586,7 @@
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="48000"
-                   channels="1" />
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="1080p" fileFormat="mp4" duration="30">
@@ -598,7 +598,7 @@
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="48000"
-                   channels="1" />
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="2160p" fileFormat="mp4" duration="30">
@@ -610,7 +610,7 @@
             <Audio codec="aac"
                    bitRate="96000"
                    sampleRate="48000"
-                   channels="1" />
+                   channels="2" />
         </EncoderProfile>
 
         <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
@@ -766,7 +766,7 @@
         minFrameHeight="144" maxFrameHeight="2160"
         minFrameRate="15" maxFrameRate="30"
         maxHFRFrameWidth="1920" maxHFRFrameHeight="1080"
-        maxHFRMode="120"  />
+        maxHFRMode="240"  />
 
     <VideoEncoderCap name="h263" enabled="true"
         minBitRate="64000" maxBitRate="2000000"
