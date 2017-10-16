@@ -254,7 +254,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.qcom \
+    power.msm8996 \
     thermal.msm8996
 
 # Recovery
