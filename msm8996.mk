@@ -257,9 +257,6 @@ PRODUCT_PACKAGES += \
     power.msm8996 \
     thermal.msm8996
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/powerhint.xml:system/etc/powerhint.xml
-
 # Recovery
 PRODUCT_PACKAGES += \
     librecovery_updater_msm8996
@@ -295,9 +292,6 @@ PRODUCT_PACKAGES += \
 # Virtual Reality
 PRODUCT_PACKAGES += \
     vr.msm8996
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.vr.high_performance.xml:system/etc/permissions/android.hardware.vr.high_performance.xml
 
 # Wifi
 PRODUCT_PACKAGES += \

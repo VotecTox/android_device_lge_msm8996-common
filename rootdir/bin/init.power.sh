@@ -34,12 +34,13 @@ write /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis 79000
 write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 300000
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/ignore_hispeed_on_notif 0
 
+# EAS: Capping the max frequency of silver core to 1.6GHz
+write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1593600
+
 write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor interactive
 write /sys/devices/system/cpu/cpu2/cpufreq/interactive/use_sched_load 1
 write /sys/devices/system/cpu/cpu2/cpufreq/interactive/use_migration_notif 1
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/above_hispeed_delay "19000 1400000:39000 1700000:19000 2100000:79000"
-
-write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 2188800
+write /sys/devices/system/cpu/cpu2/cpufreq/interactive/above_hispeed_delay "19000 1400000:39000 1700000:39000"
 
 write /sys/devices/system/cpu/cpu2/cpufreq/interactive/go_hispeed_load 90
 write /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_rate 20000
@@ -51,6 +52,16 @@ write /sys/devices/system/cpu/cpu2/cpufreq/interactive/min_sample_time 19000
 write /sys/devices/system/cpu/cpu2/cpufreq/interactive/max_freq_hysteresis 39000
 write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 300000
 write /sys/devices/system/cpu/cpu2/cpufreq/interactive/ignore_hispeed_on_notif 0
+
+# if EAS is present, switch to schedutil governor (no effect if not EAS)
+write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
+write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "schedutil"
+
+# set schedutil adjustments
+write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 6000
+write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 1000
+write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/down_rate_limit_us 6000
+write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/up_rate_limit_us 2000
 
 # re-enable thermal hotplug
 write /sys/module/msm_thermal/core_control/enabled 1
