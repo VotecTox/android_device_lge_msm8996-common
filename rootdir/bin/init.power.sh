@@ -1,14 +1,6 @@
 #!/system/bin/sh
 
 ################################################################################
-# local definitions
-
-soc_revision=`cat /sys/devices/soc0/revision`
-soc_id=`cat /sys/devices/soc0/soc_id`
-
-################################################################################
-
-################################################################################
 # helper functions to allow Android init like script
 
 function write() {
@@ -21,7 +13,6 @@ function copy() {
 
 ################################################################################
 
-write /sys/module/msm_thermal/core_control/enabled 1
 
 # disable thermal hotplug to switch governor
 write /sys/module/msm_thermal/core_control/enabled 0
@@ -30,41 +21,11 @@ write /sys/module/msm_thermal/core_control/enabled 0
 write /sys/devices/system/cpu/cpu0/online 1
 write /sys/devices/system/cpu/cpu2/online 1
 
-write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_sched_load 1
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_migration_notif 1
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay 19000
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 90
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 20000
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 960000
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy 1
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 80
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 19000
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis 79000
+write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor ondemand
 write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 300000
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/ignore_hispeed_on_notif 0
 
-write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor interactive
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/use_sched_load 1
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/use_migration_notif 1
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/above_hispeed_delay "19000 1400000:39000 1700000:19000 2100000:79000"
-
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/go_hispeed_load 90
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_rate 20000
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/hispeed_freq 1248000
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/io_is_busy 1
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads "85 1500000:90 1800000:70 2100000:95"
-
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/min_sample_time 19000
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/max_freq_hysteresis 39000
+write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor ondemand
 write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 300000
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/ignore_hispeed_on_notif 0
-
-# set schedutil adjustments
-write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 6000
-write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 1000
-write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/down_rate_limit_us 6000
-write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/up_rate_limit_us 2000
 
 # re-enable thermal hotplug
 write /sys/module/msm_thermal/core_control/enabled 1
@@ -72,16 +33,6 @@ write /sys/module/msm_thermal/core_control/enabled 1
 # input boost configuration
 write /sys/module/cpu_boost/parameters/input_boost_freq "0:1324800 2:1324800"
 write /sys/module/cpu_boost/parameters/input_boost_ms 40
-
-# Setting b.L scheduler parameters
-write /proc/sys/kernel/sched_boost 0
-write /proc/sys/kernel/sched_migration_fixup 1
-write /proc/sys/kernel/sched_upmigrate 95
-write /proc/sys/kernel/sched_downmigrate 90
-write /proc/sys/kernel/sched_freq_inc_notify 400000
-write /proc/sys/kernel/sched_freq_dec_notify 400000
-write /proc/sys/kernel/sched_spill_nr_run 3
-write /proc/sys/kernel/sched_init_task_load 100
 
 # Enable bus-dcvs
 for cpubw in /sys/class/devfreq/*qcom,cpubw* ; do
