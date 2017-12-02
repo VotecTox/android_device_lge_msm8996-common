@@ -110,9 +110,6 @@ TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/lge_touch/tap2wake"
 # CNE and DPM
 BOARD_USES_QCNE := true
 
-ENABLE_CPUSETS := true
-TARGET_POWERHAL_VARIANT := none
-
 # Display
 BOARD_USES_ADRENO := true
 TARGET_CONTINUOUS_SPLASH_ENABLED := true
