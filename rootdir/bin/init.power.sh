@@ -44,7 +44,7 @@ write /sys/devices/system/cpu/cpu2/cpufreq/interactive/go_hispeed_load 90
 write /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_rate 20000
 write /sys/devices/system/cpu/cpu2/cpufreq/interactive/hispeed_freq 1248000
 write /sys/devices/system/cpu/cpu2/cpufreq/interactive/io_is_busy 1
-rite /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads "85 1500000:90 1800000:70 2100000:95"
+write /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads "85 1500000:90 1800000:70 2100000:95"
 
 write /sys/devices/system/cpu/cpu2/cpufreq/interactive/min_sample_time 19000
 write /sys/devices/system/cpu/cpu2/cpufreq/interactive/max_freq_hysteresis 79000
