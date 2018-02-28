@@ -200,8 +200,8 @@ TARGET_USE_SDCLANG := true
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
-    /vendor/lib/hw/camera.msm8996.so|/vendor/lib/libshim_camera.so \
-    /vendor/lib/libmmcamera_ppeiscore.so|/vendor/lib/libshim_camera.so
+    /system/vendor/lib/hw/camera.msm8996.so|/system/vendor/lib/libshim_camera.so \
+    /system/vendor/lib/libmmcamera_ppeiscore.so|/system/vendor/lib/libshim_camera.so
 
 # Wi-Fi
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
