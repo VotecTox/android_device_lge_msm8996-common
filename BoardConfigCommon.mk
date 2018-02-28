@@ -1,4 +1,4 @@
-	#
+#
 # Copyright (C) 2016 The CyanogenMod Project
 # Copyright (C) 2017-2018 The LineageOS Project
 #
@@ -182,6 +182,7 @@ BOARD_NFC_HAL_SUFFIX := $(TARGET_BOARD_PLATFORM)
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 TARGET_USERIMAGES_USE_EXT4 := true
+BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 
 # pdfium
 TARGET_NEEDS_PDFIUM_BIGINT := true
