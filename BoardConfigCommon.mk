@@ -206,6 +206,11 @@ BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
 
+# Shims
+TARGET_LD_SHIM_LIBS := \
+    /vendor/lib/hw/camera.msm8996.so|/vendor/lib/libshim_camera.so \
+    /vendor/lib/libmmcamera_ppeiscore.so|/vendor/lib/libshim_camera.so
+
 # Wi-Fi
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
 BOARD_WLAN_DEVICE           := bcmdhd
