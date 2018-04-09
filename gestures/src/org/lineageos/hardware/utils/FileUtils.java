@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.hardware.util;
+package org.lineageos.hardware.util;
 
 import android.util.Log;
 
