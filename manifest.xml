@@ -45,6 +45,15 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>android.hardware.cas</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IMediaCasService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>android.hardware.configstore</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -114,15 +123,6 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.ir</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IConsumerIr</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.keymaster</name>
         <transport>hwbinder</transport>
         <impl level="generic"></impl>
@@ -184,7 +184,7 @@
     <hal format="hidl">
         <name>android.hardware.radio</name>
         <transport>hwbinder</transport>
-        <version>1.0</version>
+        <version>1.1</version>
         <interface>
             <name>IRadio</name>
             <instance>slot1</instance>
@@ -263,7 +263,7 @@
     <hal format="hidl">
         <name>android.hardware.wifi</name>
         <transport>hwbinder</transport>
-        <version>1.0</version>
+        <version>1.1</version>
         <interface>
             <name>IWifi</name>
             <instance>default</instance>
@@ -342,12 +342,40 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>com.quicinc.cne.server</name>
+        <transport>hwbinder</transport>
+        <version>2.0</version>
+        <interface>
+            <name>IServer</name>
+            <instance>cnd</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>vendor.qti.hardware.perf</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
             <name>IPerf</name>
             <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.qdutils_disp</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IQdutilsDisp</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.radio.am</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IQcRilAudio</name>
+            <instance>slot1</instance>
+            <instance>slot2</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -446,6 +474,24 @@
         <interface>
             <name>IRTPService</name>
             <instance>imsrtpservice</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>com.qualcomm.qti.uceservice</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IUceService</name>
+            <instance>com.qualcomm.qti.uceservice</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.lineage.power</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ILineagePower</name>
+            <instance>default</instance>
         </interface>
     </hal>
 </manifest>

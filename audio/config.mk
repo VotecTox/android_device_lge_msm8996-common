@@ -1,17 +1,11 @@
-TARGET_USES_AOSP_FOR_AUDIO := true
 USE_XML_AUDIO_POLICY_CONF := 1
 
-ifeq ($(TARGET_USES_AOSP_FOR_AUDIO), true)
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_policy_aosp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf
-else
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_policy_caf.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf
-endif
+    $(LOCAL_PATH)/audio/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_output_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_output_policy.conf \
-    $(LOCAL_PATH)/audio/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.conf \
+    $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     $(LOCAL_PATH)/audio/audio_tuning_mixer.txt:$(TARGET_COPY_OUT_VENDOR)/etc/audio_tuning_mixer.txt \
     $(LOCAL_PATH)/audio/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf \
     $(LOCAL_PATH)/audio/listen_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/listen_platform_info.xml \
@@ -21,12 +15,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml
 
 ifeq ($(USE_XML_AUDIO_POLICY_CONF), 1)
-ifneq ($(TARGET_USES_AOSP_FOR_AUDIO), true)
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_policy_configuration_caf.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/audio_policy_configuration.xml
-endif
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_policy_configuration_aosp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \

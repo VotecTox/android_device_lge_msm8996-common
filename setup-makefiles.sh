@@ -20,7 +20,7 @@ set -e
 
 export INITIAL_COPYRIGHT_YEAR=2016
 export G5_DEVICE_LIST="g5 h830 h850 rs988"
-export V20_DEVICE_LIST="v20 h910 h918 us996 ls997 vs995"
+export V20_DEVICE_LIST="v20 h910 h915 h918 h990 vs995 us996 ls997"
 export G6_DEVICE_LIST="g6 h870 h872 us997"
 
 # Load extract_utils and do some sanity checks
@@ -67,17 +67,23 @@ write_footers
 setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true
 
 # Copyright headers and guards
-if [ "$DEVICE_COMMON" == "g5-common" ]; then
+case "$DEVICE_COMMON" in
+g5-common)
     write_headers "$G5_DEVICE_LIST"
-else
-    if [ "$DEVICE_COMMON" == "g6-common" ]; then
-        write_headers "$G6_DEVICE_LIST"
-    else
-        write_headers "$V20_DEVICE_LIST"
-    fi
-fi
+;;
+g6-common)
+    write_headers "$G6_DEVICE_LIST"
+;;
+v20-common)
+    write_headers "$V20_DEVICE_LIST"
+;;
+*)
+    printf 'Unknown device common: "%s"\n' "$DEVICE_COMMON"
+    exit 1
+;;
+esac
 
-write_makefiles "$MY_DIR"/../$DEVICE_COMMON/proprietary-files.txt true
+write_makefiles "$MY_DIR/../$DEVICE_COMMON/proprietary-files.txt" true
 
 # We are done with common
 write_footers
@@ -88,14 +94,14 @@ setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT"
 # Copyright headers and guards
 write_headers
 
-write_makefiles "$MY_DIR"/../$DEVICE/proprietary-files.txt true
+write_makefiles "$MY_DIR/../$DEVICE/proprietary-files.txt" true
 
 # Qualcomm BSP blobs - we put a conditional around here
 # in case the BSP is actually being built
 printf '\n%s\n' "ifeq (\$(QCPATH),)" >> "$PRODUCTMK"
 printf '\n%s\n' "ifeq (\$(QCPATH),)" >> "$ANDROIDMK"
 
-write_makefiles "$MY_DIR"/../$DEVICE/proprietary-files-qc.txt true
+write_makefiles "$MY_DIR/../$DEVICE/proprietary-files-qc.txt" true
 
 printf '\n%s\n' "endif" >> "$PRODUCTMK"
 printf '\n%s\n' "endif" >> "$ANDROIDMK"
